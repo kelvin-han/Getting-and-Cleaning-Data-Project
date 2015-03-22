@@ -1,3 +1,36 @@
+# Input Data
+activity_labels.txt contains the code number and name of the 6 activities
+features.txt contains the complete list of 561 variables of each feature vector
+
+Under subfolder test (2,947 observations per file with no header)
+subject_test.txt contains identification code of subject observed 
+X_test.txt contains the 561 columns of variable data recorded when observation was made
+y_test.txt contains the activity code recorded when observation was made
+
+Under subfolder train (7,352 observations per file with no header)
+subject_train.txt contains identification code of subject observed 
+X_train.txt contains the 561 columns of variable data recorded when observation was made
+y_train.txt contains the activity code recorded when observation was made
+
+Under subfolder Intertial Signals
+Data files are not required
+
+# Data transformation
+Step 1: Merges the training and the test sets to create one data set
+- Read train data files into respective train dataframes and combine by rows
+- Read test data files into respective train dataframes and combine by rows
+- Combine dataframes by columns to get a single dataframe
+Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.
+Step 3: Uses descriptive activity names to name the activities in the data set
+Step 4: Appropriately labels the data set with descriptive variable names.
+- Use only feature names with mean and std
+- Modify and apply feature names for better readability, e.g. tBodyAcc-mean()-X changed to timeBodyAccMeanX 
+
+Step 5: From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+- Reshape data using melt and dcast then write data to data.txt file
+
+# Variables after data transformation
+
 Subject		Subject ID
 Activity		Activity performed when measurements were taken
 		
